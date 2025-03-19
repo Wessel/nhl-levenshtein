@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>LevenshteinBenchmark-20250319-164145</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Ubuntu 24.04.2 LTS (Noble Numbat)
+11th Gen Intel Core i5-1135G7 2.40GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 9.0.202
+  [Host]     : .NET 9.0.3 (9.0.325.11113), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  DefaultJob : .NET 9.0.3 (9.0.325.11113), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method               </th><th>Mean      </th><th>Error   </th><th>StdDev </th>
+</tr>
+</thead><tbody><tr><td>ShortIdenticalStrings</td><td>1.312 ns</td><td>0.0004 ns</td><td>0.0003 ns</td>
+</tr><tr><td>ShortDifferentStrings</td><td>103.049 ns</td><td>0.0674 ns</td><td>0.0563 ns</td>
+</tr><tr><td>ShortSimilarStrings</td><td>194.641 ns</td><td>0.0788 ns</td><td>0.0658 ns</td>
+</tr><tr><td>LongIdenticalStrings</td><td>1.326 ns</td><td>0.0015 ns</td><td>0.0013 ns</td>
+</tr><tr><td>LongDifferentStrings</td><td>4,223,805.344 ns</td><td>5,261.4891 ns</td><td>4,664.1730 ns</td>
+</tr><tr><td>LongPartiallySimilarStrings</td><td>4,247,203.544 ns</td><td>10,246.9063 ns</td><td>9,584.9625 ns</td>
+</tr></tbody></table>
+</body>
+</html>

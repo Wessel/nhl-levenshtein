@@ -1,0 +1,48 @@
+\documentclass[9pt]{IEEEconf}
+
+\input{packages.tex}
+\input{variables.tex}
+
+\begin{document}
+\small
+% \sffamily
+% Front page containing title, author and date
+\pagenumbering{gobble}
+\input{sec/0 frontpage.tex}
+\newpage
+
+% Set page numbering to arabic and show the table of contents, toc should not contain page number
+\pagenumbering{arabic}
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+% Enable two column layout for the rest of the document
+\twocolumn
+
+% Dictionary containing all the terms used in the document
+\input{sec/0 dictionairy.tex}
+\newpage
+
+% Abstract of the document
+\input{sec/0 abstract.tex}
+
+% Sections of the document
+\input{sec/1 introduction.tex}
+
+\section*{Acknowledgements}
+\label{sec:acknowledgements}
+The author would like to thank the following people for their contribution to this report:
+\begin{itemize}
+  \item[] \makebox[3.2cm]{\textbf{Foppele, J.}\hfill} Supervisor
+  \item[] \makebox[3.2cm]{\textbf{Luciano, P.}\hfill} Haskell code review
+  \item[] \makebox[3.2cm]{\textbf{Ralph, D.}\hfill} TypeScript code review
+  \item[] \makebox[3.2cm]{\textbf{Siegmar , B.}\hfill} CSharp code review
+\end{itemize}
+
+\label{sec:referenties}
+\bibliography{references}
+\nocite{*}
+
+\input{sec/2 appendice.tex}
+\end{document}

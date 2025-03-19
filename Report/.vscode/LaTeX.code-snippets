@@ -1,0 +1,31 @@
+{
+  "Create Table": {
+    "prefix": "tbl",
+    "body": [
+      "\\begin{table}[ht]",
+      "  \\centering",
+      "  \\begin{threeparttable}",
+      "    \\begin{tabular}{p{2.5cm}|p{8.5cm}}",
+      "      \\toprule",
+      "      $1 & $2 \\\\\\\\",
+      "      \\hline",
+      "      $3 & $4 \\\\\\\\",
+      "      \\bottomrule",
+      "    \\end{tabular}",
+      "  \\end{threeparttable}",
+      "\\end{table}"
+    ],
+    "description": "Create a table with two columns",
+  },
+  "Create Figure": {
+    "prefix": "fig",
+    "body": [
+      "\\begin{figure}[H]",
+      "  \\includegraphics[width=1\\textwidth]{../img/$1}",
+      "  \\caption{$2}",
+      "  \\label{fig:$3}",
+      "\\end{figure}"
+    ],
+    "description": "Create a figure ",
+  }
+}

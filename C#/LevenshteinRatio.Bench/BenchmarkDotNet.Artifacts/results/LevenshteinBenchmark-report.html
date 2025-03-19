@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>LevenshteinBenchmark-20250319-165843</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Debian GNU/Linux 12 (bookworm) (container)
+AMD Ryzen 5 5600X, 1 CPU, 12 logical and 6 physical cores
+.NET SDK 9.0.201
+  [Host]     : .NET 9.0.3 (9.0.325.11113), X64 RyuJIT AVX2
+  DefaultJob : .NET 9.0.3 (9.0.325.11113), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method               </th><th>Mean      </th><th>Error   </th><th>StdDev  </th>
+</tr>
+</thead><tbody><tr><td>ShortIdenticalStrings</td><td>1.410 ns</td><td>0.0510 ns</td><td>0.0793 ns</td>
+</tr><tr><td>ShortDifferentStrings</td><td>112.147 ns</td><td>1.4472 ns</td><td>1.3537 ns</td>
+</tr><tr><td>ShortSimilarStrings</td><td>193.013 ns</td><td>1.8653 ns</td><td>1.7448 ns</td>
+</tr><tr><td>LongIdenticalStrings</td><td>1.097 ns</td><td>0.0221 ns</td><td>0.0196 ns</td>
+</tr><tr><td>LongDifferentStrings</td><td>3,234,542.032 ns</td><td>34,662.1297 ns</td><td>32,422.9776 ns</td>
+</tr><tr><td>LongPartiallySimilarStrings</td><td>3,233,473.960 ns</td><td>18,980.6706 ns</td><td>16,825.8701 ns</td>
+</tr></tbody></table>
+</body>
+</html>

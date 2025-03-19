@@ -1,0 +1,94 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           levenshteinRatio
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/wessel/levenshteinRatio#readme>
+homepage:       https://github.com/wessel/levenshteinRatio#readme
+bug-reports:    https://github.com/wessel/levenshteinRatio/issues
+author:         Wessel T
+maintainer:     contact@wessel.gg
+copyright:      Wessel Tip &lt;contact@wessel.gg&gt; (https://wessel.gg/)
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/wessel/levenshteinRatio
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_levenshteinRatio
+  autogen-modules:
+      Paths_levenshteinRatio
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , text-format-simple
+  default-language: Haskell2010
+
+executable levenshteinRatio-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_levenshteinRatio
+  autogen-modules:
+      Paths_levenshteinRatio
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , levenshteinRatio
+    , text-format-simple
+  default-language: Haskell2010
+
+test-suite levenshteinRatio-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      LevenshteinRatioSpec
+      SpecHelper
+      Paths_levenshteinRatio
+  autogen-modules:
+      Paths_levenshteinRatio
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , hspec
+    , levenshteinRatio
+    , text-format-simple
+  default-language: Haskell2010
+
+benchmark levenshteinRatio-bench
+  type: exitcode-stdio-1.0
+  main-is: Bench.hs
+  other-modules:
+      Paths_levenshteinRatio
+  autogen-modules:
+      Paths_levenshteinRatio
+  hs-source-dirs:
+      bench
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      array
+    , base
+    , criterion
+    , levenshteinRatio
+    , text-format-simple
+  default-language: Haskell2010
