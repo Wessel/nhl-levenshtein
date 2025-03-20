@@ -6,9 +6,7 @@ author:              "Wessel T"
 maintainer:          "contact@wessel.gg"
 copyright:           "Wessel Tip &lt;contact@wessel.gg&gt; (https://wessel.gg/)"
 
-extra-source-files:
-- README.md
-- CHANGELOG.md
+# extra-source-files:
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
