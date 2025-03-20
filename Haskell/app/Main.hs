@@ -5,9 +5,13 @@ import Text.Format
 
 main :: IO ()
 main = do
-  let source = "kitten"
-      target = "sitting"
-
-  putStrLn $ format "Source\t{0}" [source]
-  putStrLn $ format "Target\t{0}" [target]
-  putStrLn $ format "Ratio\t{0}" [show (levenshteinRatio source target)]
+  repeatNTimes
+    1000000
+    (putStrLn
+      (format "{0}" [show (levenshteinRatio "test" "kitten")])
+    )
+  where
+    repeatNTimes 0 _ = return ()
+    repeatNTimes n action = do
+      action
+      repeatNTimes (n-1) action

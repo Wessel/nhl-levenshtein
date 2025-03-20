@@ -1,3 +1,5 @@
 ﻿using LevenshteinRatio;
 
-Console.WriteLine(Levenshtein.Ratio("exampel", "example"));
+for (int i = 0; i < 1000000; i++) {
+  Console.WriteLine(i + Levenshtein.Ratio("test", "kitten"));
+}
