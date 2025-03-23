@@ -1,0 +1,91 @@
+\section{Theoretical Framework}
+
+\subsection{Functional Programming}
+\label{ssec:fp}
+Functional programming is one of four programming paradigms that treats computation as mathematical
+functions where all data is immmutable.\cite{hudak1989conception} This makes functional programming
+declarative. The program specifies what it should do, rather than how it should do it.
+
+Functional programming is based on the concept of pure functions, which are functions
+that have no side effects and always return the same output for the same input.
+
+ \subsubsection*{Haskell}
+ Haskell (or HS) is a functional programming language that is based on the lambda calculus.\cite{hutton2016programming}
+ Haskell is a pure functional language, which means that all functions in Haskell are pure functions.
+ It is also a lazy language, meaning that expressions are only ran when their values are needed.
+
+ \subsection{Imperative Programming}
+
+ Imperative programming is one of the four programming paradigms that uses statements to change
+ the state of a program. In imperative programming, the program is a sequence of statements that
+ are executed in order.\cite{syme2007introducing}
+
+ The state of the program is determined by mutable variables. Imperative programming is the
+ complete opposite of functional programming mentioned in \autoref{ssec:fp},
+ promoting the use of mutable variables.
+
+ The mutable nature of imperaetive programming makes it difficult to reason the behavior of
+ a function, as the state of the program can change at any time.
+
+ \subsubsection*{CSharp}
+ C\# (or CSharp) is an object-oriented programming language that supports imperative programming.
+ C\# is widely used for developing Windows applications, web applications, and games.
+
+ \subsection{The Levenshtein Distance Algorithm}
+ \label{ssec:t-levenshtein}
+
+ The Levenshtein Distance algorithm is an algorithm used to calculate the similarity between two
+ pieces of text. This is done by calculating the minimum number of single-character edits
+ (insertions, deletions, or substitutions) required to change one string into another.\cite{po2020similarity}
+
+ The result of the Levenshtein Distance algorithm is a value between zero and one
+ that represents the number of edits required to change one string into another.
+ This number is called the \textit{Levenshtein Ratio}.
+
+ The pseudocode for the Levenshtein Distance algorithm with a complexity of $O(m \times n)$
+ is shown in \autoref{alg:levenshtein}.
+
+ \begin{algorithm}
+   \small
+   \caption{Levenshtein Distance Algorithm\cite{po2020similarity}}
+   \label{alg:levenshtein}
+   \begin{algorithmic}[1]
+     \Function{LevenshteinDistance}{$s, t$}
+       \State $n \gets$ length of $s$.
+       \State $m \gets$ length of $t$.
+
+       \If{$n = 0$}
+         \State \Return $m$
+       \EndIf
+       \If{$m = 0$}
+         \State \Return $n$
+       \EndIf
+
+       \State Create matrix $d$ of size $0..m \times 0..n$.
+
+       \State Initialize first row to $0..n$.
+       \State Initialize first column to $0..m$.
+
+       \State Examine each character of $s$ (i from $1$ to $n$).
+
+       \State Examine each character of $t$ (j from $1$ to $m$).
+
+       \If{$s[i] = t[j]$}
+         \State $c \gets 0$
+       \Else
+         \State $c \gets 1$
+       \EndIf
+
+      \State $d[i,j] \gets \min(
+        \begin{cases}
+          \text{Cell above} = [i,j-1] + 1 \\
+          \text{Cell left} = [di,j-1] + 1 \\
+          \text{Cell diagonal} = d[i-1,j-1] + c
+        \end{cases}
+      )$
+
+      \State \Return $d[n,m]$.
+
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}

@@ -1,4 +1,4 @@
-\documentclass[9pt]{IEEEconf}
+\documentclass{IEEEconf}
 
 \input{packages.tex}
 \input{variables.tex}
@@ -8,7 +8,7 @@
 % \sffamily
 % Front page containing title, author and date
 \pagenumbering{gobble}
-\input{sec/0 frontpage.tex}
+\input{sec/0-frontpage.tex}
 \newpage
 
 % Set page numbering to arabic and show the table of contents, toc should not contain page number
@@ -21,18 +21,19 @@
 \twocolumn
 
 % Dictionary containing all the terms used in the document
-\input{sec/0 dictionairy.tex}
+\input{sec/0-dictionairy.tex}
 \newpage
 
 % Abstract of the document
-\input{sec/0 abstract.tex}
-
+\input{sec/0-abstract.tex}
 % Sections of the document
-\input{sec/1 introduction.tex}
-\input{sec/2 theoretical framework.tex}
-\input{sec/3 methodology.tex}
-\input{sec/4 results.tex}
-\input{sec/5 conclusion.tex}
+\input{sec/1-introduction.tex}
+% \cite{ebert2016cyclomatic}
+
+\input{sec/2-theoretical-framework.tex}
+\input{sec/3-methodology.tex}
+\input{sec/4-results.tex}
+\input{sec/5-conclusion.tex}
 
 \section*{Acknowledgements}
 \label{sec:acknowledgements}
@@ -45,8 +46,8 @@ The author would like to thank the following people for their contribution to th
 \end{itemize}
 
 \label{sec:referenties}
+\bibliographystyle{IEEEtran}
 \bibliography{references}
-\nocite{*}
 
-\input{sec/0 appendice.tex}
+\input{sec/0-appendice.tex}
 \end{document}
