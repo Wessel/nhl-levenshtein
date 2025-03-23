@@ -1,0 +1,91 @@
+\section{Results}
+\subsection{Benchmarks}
+\label{ssec:r-benchmark}
+
+This section will present the benchmarks of the \textit{Levenshtein Distance algorithm}
+mentioned in \autoref{ssec:t-levenshtein} across all three implementations.
+Each benchmark was executed on an \textit{AMD Ryzen 5 5600X} CPU under the same controlled
+runtime environment.
+
+\subsubsection{C\# (.NET)}
+Running C\# with the DOTNET runtime consistently outperformed both TypeScript and Haskell,
+having the fastest execution times across all benchmarks.
+It was on average $3 \times$ faster than TypeScript and over
+$1000 \times$ faster than Haskell in some cases.
+
+The performance gap to Haskell and TypeScript remained consistent for
+\textit{short different strings} in \textit{112.1 ns} and
+\textit{short similar strings} in \textit{193.0 ns}.
+
+Long string comparisons saw minimal performance degradation compared to other implementations.
+\textit{long different strings} and \textit{long partially similar strings} both completed in
+\textit{3.23 ms}, showing no performance difference inbetween completely and partially different strings.
+both cases were $2 \times$ faster than TypeScript and over $300 \times$ faster than Haskell.
+
+\subsubsection{TypeScript (Deno)}
+Running TypeScript in the Deno runtime showed an average improvement of $2 \times$ in execution
+time compared to Haskell, but TypeScript was still $3 \times$ slower than C\# for all cases.
+
+TypeScript showed a big performance gap between intirely different strings and partially similar strings.
+The function executed \textit{short different strings} in \textit{144.9 ns},
+whilst \textit{short partially different strings} averaged for \textit{323.3 ns}. Showing a
+\textit{2.23x} increase in execution time.
+
+The time exponentially increased for long strings, with \textit{long identical strings} taking
+\textit{7.0 ms} and \textit{long partially similar strings} taking \textit{7.5 ms}. This is a
+$48275 \times$ (Or $194 \times$ per character) increase in execution time compared to short strings.
+
+But the performance difference between completely and partially different strings did close down to
+a mere $1.1 \times$ increase when using long strings. Showing that the algorithm is more efficient
+when comparing long strings variating strings.
+
+\subsubsection{Haskell (GHCup)}
+Running Haskell with the GHCup compiler showed the slowest performance across all benchmarks.
+It was on average $10 \times$ slower than TypeScript and over $1000 \times$ slower than C\# in long string comparisons.
+
+The function executed \textit{short identical strings} in \textit{20.15 ns}, which was significantly slower than both TypeScript (\textit{5.1 ns}) and C\# (\textit{1.41 ns}).
+
+Execution times for \textit{short different strings} (\textit{992.3 ns}) and
+\textit{short similar strings} (\textit{2.41 s}) demonstrated inefficiencies in Haskell's string
+processing.
+
+\subsection{Resource Usage}
+
+Although Haskell scored the worst in execution time mentioned in \autoref{ssec:r-benchmark}, it did
+use significantly less memory and CPU than both C\# and TypeScript.
+This can be seen in \autoref{grf:mem-usage} and \autoref{grf:cpu-usage}.
+
+Haskell only used on average 39 MiB of memory and 8.88\% CPU,
+whilst C\# used 61 MiB and 38.14\% CPU,
+and TypeScript used 60 MB and 60.27\% CPU.
+
+\subsection{Readability}
+
+\begin{table}[h]
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{l|c|c|c}
+      \toprule
+      Criteria              & HS & C\# & TS \\
+      \midrule
+      Cyclomatic Complexity & 4   & 3   & 3  \\
+      Code Structure        & 5   & 4   & 4  \\
+      Code Depth            & 4   & 3   & 4  \\
+      Code length           & 5   & 4   & 3  \\
+      \hline
+      Average               & 4.5 & 3.5 & 3.5 \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \scriptsize
+      \item[] \makebox[0.3cm]{\textbf{I.}\hfill} HS stands for Haskell
+      \item[] \makebox[0.3cm]{\textbf{II.}\hfill} TS stands for TypeScript
+      \item[] \makebox[0.3cm]{\textbf{III.}\hfill} Scores range from 1 - 5
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+The Haskell implementation scores highest due to its conciseness, functional purity,
+and minimal nesting.
+
+The C\# and TypeScript implementations are comparable to eachother in code readability.

@@ -1,8 +1,25 @@
 \onecolumn
-\begin{landscape}
 \section{Appendice}
 
-\subsection*{Benchmark Summaries}
+\subsection{Graphs}
+\label{ssec:graphs}
+
+\begin{figure}[H]
+  \caption{Memory Usage whilst executing the algorithm 1000000 times.}
+  \label{grf:mem-usage}
+  \includegraphics[width=0.5\textwidth]{./img/mem-usage.png}
+\end{figure}
+
+
+\begin{figure}[H]
+  \caption{CPU Usage whilst executing the algorithm 1000000 times.}
+  \label{grf:cpu-usage}
+  \includegraphics[width=0.5\textwidth]{./img/cpu-usage.png}
+\end{figure}
+
+\begin{landscape}
+\subsection{Benchmark Summaries}
+\label{ssec:benchmark-s}
 \begin{figure}[H]
   \caption{Benchmark results for the TypeScript implementation using the Deno runtime.}
   \label{code:benchmark-typescript}
@@ -24,7 +41,7 @@
 \hfill
 
 \begin{figure}[H]
-  \caption{Benchmark results for the CSharp implementation using BenchmarkDotNet.}
+  \caption{Benchmark results for the C\# implementation using BenchmarkDotNet.}
   \label{code:benchmark-csharp}
   \begin{minted}[fontsize=\footnotesize]{text}
   Runtime = .NET 9.0.3 (9.0.325.11113), X64 RyuJIT AVX2; GC = Concurrent Workstation

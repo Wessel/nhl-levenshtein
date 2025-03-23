@@ -1,3 +1,20 @@
 \begin{abstract}
+This report will compare three different programming languages in performance and readability.
+Each programming language will implement a different programming paradigm.
 
+Haskell was used as functional language, C\# as imperative language,
+and TypeScript as semi-functional language.
+
+The Levenshtein distance algorithm, which measures string similarity,
+was implemented in each language to evaluate performance and readability.
+
+Standardized unit tests and benchmarking tools (Criterion, BenchmarkDotNet, Deno Bench)
+have been used to compare each implementation.
+
+Results revealed significant performance differences.
+C\# outperformed both TypeScript and Haskell, executing tasks up to $1000 \times$ faster in
+long-string comparisons. Haskell, while slower, demonstrated way better resource
+efficiency, using $2 \times$ less memory compared to C\# and TypeScript.
+
+These results highlight the trade-offs between execution speed and resource usage.
 \end{abstract}

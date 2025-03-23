@@ -1,0 +1,44 @@
+\section{Methodology}
+
+\subsection{Unit Tests}
+To test the implementations, identical test datasets will be used across C\#, Haskell and
+TypeScript. The following test cases will be used to test the correctness of the implementations:
+
+\begin{enumerate}
+  \item[-] \makebox[2cm]{\textbf{\#1: Empty}\hfill=} $("", "") -> 1$
+  \item[-] \makebox[2cm]{\hfill=} $("", "x") -> 0$
+  \item[ ] \makebox[2cm]{\hfill=} $("x", "") -> 0$
+  \item[-] \makebox[2cm]{\textbf{\#2: Nulls}\hfill=} $("", null) -> 0$
+  \item[ ] \makebox[2cm]{\hfill=} $(null, "") -> 0$
+  \item[ ] \makebox[2cm]{\hfill=} $(null, null) -> 0$
+  \item[-] \makebox[2cm]{\textbf{\#3: Identical}\hfill=} $("x", "x") -> 1$
+  \item[-] \makebox[2cm]{\textbf{\#4: Long}\hfill=} $(lStringA, lStringA) -> 1$
+  \item[-] \makebox[2cm]{\textbf{\#4: Long}\hfill=} $(lStringA, lStringC) -> 0.571...$
+  \item[-] \makebox[2cm]{\hfill=} $(lStringA, lStringB) -> 0$
+  \item[-] \makebox[2cm]{\textbf{\#5: Different}\hfill=} $("x", "y") -> 0$
+  \item[-] \makebox[2cm]{\textbf{\#6: Similar}\hfill=} $("kitten", "sitting") -> 0.571...$
+\end{enumerate}
+
+\subsection{Benchmarking}
+\label{ssec:m-benchmarks}
+\textit{Criterion} will be used to measure the performance of the Haskell implementation.
+
+\textit{BenchmarkDotNet} will be used to measure the performance of the C\# implementation.
+
+\textit{Deno Bench} will be used to measure the performance of the TypeScript implementation.
+
+\textit{perfcollect} Will be used to collect performance data from all three implementations in the
+form of flame graphs. This will allow for optimisation of the implementations by changing the parts
+that take the longest time to execute.
+
+\subsection{Readability}
+To assess code quality, a scoring system from one to five will be used based on the following criteria:
+
+\begin{itemize}
+    \item[-] \makebox[3.5cm]{\textbf{Cyclomatic Complexity\cite{ebert2016cyclomatic}}\hfill} How easy is it to follow the code path.
+    \item[-] \makebox[3.5cm]{\textbf{Code Structure}\hfill} Language-specific conventions (modularity in C\#, purity in Haskell as example).
+    \item[-] \makebox[3.5cm]{\textbf{Code Depth}\hfill} Based on nesting depth. it is best practice to have the lowest nesting depth possible.
+    \item[-] \makebox[3.5cm]{\textbf{Code Length}\hfill} How concise the code is.
+\end{itemize}
+
+Scores were averaged across three developers familiar with all three languages.

@@ -7,9 +7,10 @@ different programming styles and compares the results on multiple fronts.
 
 The Levenshtein ratio algorithm is a commonly used
 algorithm to measure the similarity between two strings.
-It is applied in various fields such as spell checking, DNA sequencing, and plagiarism detection.
-By implementing this algorithm in different programming languages, we can analyze the impact of
-the programming paradigm on performance, code complexity, and maintainability.
+It is applied in various fields such as spell checking and plagiarism detection.
+By implementing this algorithm in different programming languages,
+the performance and code complexity can be compared to understand the differences that
+exist between multiple programming paradigms.
 
 The following languages were chosen for this comparison, each representing a different paradigm:
 \begin{itemize}
@@ -17,18 +18,13 @@ The following languages were chosen for this comparison, each representing a dif
   emphasizes immutability and recursion. Known for its concise and expressive code.
   \item[-] \makebox[3.2cm]{\textbf{Csharp  (Imperative)}\hfill} An object-oriented language mainly
   used to develop Windows applications and games.
-  \item[-] \makebox[3.2cm]{\textbf{TypeScript (Semi)}\hfill} A language that supports both imperative
-  and functional constructs. Known for its leniant interperter.
+  \item[-] \makebox[3.2cm]{\textbf{TypeScript (Semi)}\hfill} A language that supports both
+  imperative and functional constructs. Known for its leniant interperter.
 \end{itemize}
 
-The comparison is based on the following criteria:
+The comparison will be based on the following criteria:
 \begin{enumerate}
-  \item[I.] Speed – time complexity and memory usage.
-  \item[II.] Readability – how simple and intuitive the code is.
-  \item[III.] Maintainability – how well the code scales and is extendable.
-  \item[IV.] Complexity of implementation – how difficult it is to correctly implement the algorithm in the chosen language.
+  \item[I.] \makebox[2.4cm]{\textbf{Performance}\hfill} time complexity and resource usage of the algorithm.
+  \item[II.] \makebox[2.4cm]{\textbf{Readability}\hfill} how simple and intuitive the code is.
+  \item[II.] \makebox[2.4cm]{\textbf{Maintainability}\hfill} is the code easy to maintain and future-proof.
 \end{enumerate}
-
-To objectively test the implementations, identical test datasets are used. Multiple test cases are designed that increase in complexity and size, with an expected output. The correctness of the implementations is verified with asserts or unit tests.
-
-This approach provides insight into how different programming paradigms affect the practical implementation of a well-known algorithm.
